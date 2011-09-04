@@ -1,0 +1,70 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-1.1.1.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	    <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
+	    <script src="js/backbone-min.js"></script>
+	
+	<script>
+	(function ($) {
+
+	  Todo = Backbone.Model.extend({
+	    //Create a model to hold todo atribute
+	    name: null
+	  });
+
+	  Todos = Backbone.Collection.extend({
+	    //This is our Todos collection and holds our Todo models
+	    initialize: function (models, options) {
+	      this.bind("add", options.view.addTodoLi);
+	      //Listen for new additions to the collection and call a view function if so
+	    }
+	  });
+
+	  AppView = Backbone.View.extend({
+	    el: $("body"),
+	    initialize: function () {
+	      this.todos = new Todos( null, { view: this });
+	      //Create a todos collection when the view is initialized.
+	      //Pass it a reference to this view to create a connection between the two
+	    },
+	    events: {
+	      "click #addTask":  "getInput",
+	    },
+	    getInput: function () {
+	      var todo_name = $('#taskInput').val();
+	      var todo_model = new Todo({ name: todo_name });
+	      //Add a new todo model to our todo collection
+	      this.todos.add( todo_model );
+	    },
+	    addTodoLi: function (model) {
+	      //The parameter passed is a reference to the model that was added
+	      $("#todo-list").append("<li>" + model.get('name') + "</li>");
+	      //Use .get to receive attributes of the model
+	    }
+	  });
+
+	  var appview = new AppView;
+	})(jQuery);
+	</script>
+
+	<ul id="todo-list">
+	</ul>
+		<label for="addTask">Task</label> 
+	         <input class="xlarge" id="taskInput" size="30" type="text" /> 
+
+	    <button  id='addTask' class="btn primary">Add Task</button>
+
+
+
+</body>
+</html>
