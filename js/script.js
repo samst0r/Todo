@@ -42,8 +42,8 @@
         },
         addTodoLi: function (model) {
             //The parameter passed is a reference to the model that was added
-            $("#todo-list").append("<a href='#'><li>" + model.get('name') + "</li></a>");
-            //Use .get to receive attributes of the model
+			$("#todo-list").append("<li><a href='#'>" + model.get('name') + "</a></li>") ;
+			  //Use .get to receive attributes of the model
         }
     });
 

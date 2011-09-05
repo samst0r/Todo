@@ -1,5 +1,5 @@
 body, html {
-	margin:0;
+	margin:40px 0;
 	padding:0;
 }
 
@@ -11,12 +11,14 @@ footer {
 
 h1 {
 	display: block;
+	margin-bottom: 20px;
 }
 
 ul {
 	margin: 0;
 	list-style: none;
 	list-style-position:outside;
+	margin-bottom: 20px;
 }
 
 li {
@@ -27,4 +29,9 @@ li {
 	background: #f2f2f2;
 	color: #666;
 	border-radius: 5px;
+}
+
+li:hover {
+	background:#C0C0C0;
+	color: #999;
 }
