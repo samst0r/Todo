@@ -4,9 +4,9 @@
 Why?
 ---
 To get some experience using technologies such as:
-* JQuery
-* Backbone.js
-* Bootstrap.css
+__JQuery__
+__Backbone.js__
+__Bootstrap.css__
  
 Usage
 -----
