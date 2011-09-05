@@ -3,7 +3,10 @@
 
 Why?
 ---
-To get some experience using technologies such as '''JQuery''' and '''Backbone.js''' and '''Bootstrap.css'''
+To get some experience using technologies such as:
+*JQuery
+*Backbone.js
+*Bootstrap.css
  
 Usage
 -----
