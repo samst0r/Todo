@@ -3,10 +3,7 @@
 
 Why?
 ---
-To get some experience using technologies such as:
-__JQuery__
-__Backbone.js__
-__Bootstrap.css__
+To get some experience using technologies: __JQuery__, __Backbone.js__ and __Bootstrap.css__
  
 Usage
 -----
